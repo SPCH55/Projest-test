@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>ข่าวสาร</title>
+</head>
+
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed top-0 left-0 right-0 z-10">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <h1 class="text-xl font-bold text-gray-800">Admin News</h1>
+            <button class="text-gray-800 bg-red-500 hover:bg-red-600 text-white p-2 rounded-full">
+                <span class="material-icons"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/></svg></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="flex h-screen pt-16">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white shadow-lg">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-gray-800">Menu</h2>
+            </div>
+            <nav class="mt-6">
+                <ul>
+                    <li class="mb-2">
+                        <a href="{% url 'DashBoard' %}" class="flex items-center text-gray-700 hover:bg-purple-100 px-6 py-3 rounded-lg">
+                            <span class="material-icons"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M80-120v-80h800v80H80Zm40-120v-280h120v280H120Zm200 0v-480h120v480H320Zm200 0v-360h120v360H520Zm200 0v-600h120v600H720Z"/></svg></span>
+                            <span class="ml-4">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="#" class="flex items-center text-gray-700 hover:bg-purple-100 px-6 py-3 rounded-lg">
+                            <span class="material-icons"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg></span>
+                            <span class="ml-4">ข่าวสาร</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'petanque' %}" class="flex items-center text-gray-700 hover:bg-purple-100 px-6 py-3 rounded-lg">
+                            <span class="material-icons"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M224-288q45-35 70.5-85T320-480q0-57-25.5-107T224-672q-31 42-47.5 91T160-480q0 52 16.5 101t47.5 91Zm256 128q55 0 106.5-17.5T680-230q-57-46-88.5-111.5T560-480q0-73 31.5-138.5T680-730q-42-35-93.5-52.5T480-800q-55 0-106.5 17.5T280-730q57 46 88.5 111.5T400-480q0 73-31.5 138.5T280-230q42 35 93.5 52.5T480-160Zm256-128q31-42 47.5-91T800-480q0-52-16.5-101T736-672q-45 35-70.5 85T640-480q0 57 25.5 107t70.5 85ZM480-480Zm0 400q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/></svg></span>
+                            <span class="ml-4">สนามและเปตอง</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'AdminUser' %}" class="flex items-center text-gray-700 hover:bg-purple-100 px-6 py-3 rounded-lg">
+                            <span class="material-icons"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M400-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM80-160v-112q0-33 17-62t47-44q51-26 115-44t141-18h14q6 0 12 2-8 18-13.5 37.5T404-360h-4q-71 0-127.5 18T180-306q-9 5-14.5 14t-5.5 20v32h252q6 21 16 41.5t22 38.5H80Zm560 40-12-60q-12-5-22.5-10.5T584-204l-58 18-40-68 46-40q-2-14-2-26t2-26l-46-40 40-68 58 18q11-8 21.5-13.5T628-460l12-60h80l12 60q12 5 22.5 11t21.5 15l58-20 40 70-46 40q2 12 2 25t-2 25l46 40-40 68-58-18q-11 8-21.5 13.5T732-180l-12 60h-80Zm40-120q33 0 56.5-23.5T760-320q0-33-23.5-56.5T680-400q-33 0-56.5 23.5T600-320q0 33 23.5 56.5T680-240ZM400-560q33 0 56.5-23.5T480-640q0-33-23.5-56.5T400-720q-33 0-56.5 23.5T320-640q0 33 23.5 56.5T400-560Zm0-80Zm12 400Z"/></svg></span>
+                            <span class="ml-4">จัดการผู้ใช้</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Content Section -->
+        <main class="flex-1 bg-gray-100 p-6">
+            <header class="mb-8">
+                <h1 class="text-2xl font-bold text-gray-800">ข่าวสาร</h1>
+            </header>
+
+            <!-- News Section -->
+            <section class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-lg font-semibold text-gray-800">ข่าวทั้งหมด</h2>
+                <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Single News Item -->
+                    <div class="bg-gray-50 rounded-lg shadow-md p-4">
+                        <img src="https://via.placeholder.com/300x200" alt="News Image" class="w-full h-48 object-cover rounded-md">
+                        <h3 class="text-lg font-semibold text-gray-800 mt-4">หัวข้อข่าวสาร 1</h3>
+                        <p class="text-gray-600 mt-2">
+                            นี่คือเนื้อหาข่าวย่อ... สามารถคลิก "อ่านเพิ่มเติม" เพื่อดูรายละเอียด
+                        </p>
+                        <div class="mt-4">
+                            <a href="#" class="text-purple-500 hover:text-purple-700 font-medium">อ่านเพิ่มเติม</a>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full shadow-md text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/></svg>
+                            </button>
+                            <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full shadow-md text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Repeat News Items -->
+                    <div class="bg-gray-50 rounded-lg shadow-md p-4">
+                        <img src="https://via.placeholder.com/300x200" alt="News Image" class="w-full h-48 object-cover rounded-md">
+                        <h3 class="text-lg font-semibold text-gray-800 mt-4">หัวข้อข่าวสาร 2</h3>
+                        <p class="text-gray-600 mt-2">
+                            นี่คือเนื้อหาข่าวย่อ... สามารถคลิก "อ่านเพิ่มเติม" เพื่อดูรายละเอียด
+                        </p>
+                        <div class="mt-4">
+                            <a href="#" class="text-purple-500 hover:text-purple-700 font-medium">อ่านเพิ่มเติม</a>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full shadow-md text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/></svg>
+                            </button>
+                            <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full shadow-md text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Add more news items -->
+                </div>
+               
+                <div class="flex justify-center">
+                    <button class="bg-purple-500 hover:bg-purple-600 text-white px-6 py-3 rounded-full shadow-lg flex items-center space-x-2">
+                        <span class="material-icons"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg></span>
+                        <span>เพิ่มข่าวใหม่</span>
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

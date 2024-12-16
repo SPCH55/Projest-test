@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>จองลูกเปตอง</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto flex justify-between items-center py-4">
+            <div class="text-2xl font-bold">Patanque Booking</div>
+            <div class="flex space-x-6">
+                <a href="#" class="text-lg text-gray-700 hover:text-gray-900">จองลูกเปตอง</a>
+                <a href="#" class="text-lg text-gray-700 hover:text-gray-900">จองสนาม</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container mx-auto mt-8">
+        <h1 class="text-3xl font-bold text-center mb-6">จองลูกเปตอง</h1>
+
+        <!-- Petanque Ball Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Ball Card -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <img 
+                    src="https://via.placeholder.com/300x200" 
+                    alt="Petanque Ball" 
+                    class="rounded-lg mb-4 w-full"
+                />
+                <h3 class="text-lg font-semibold mb-2">ชื่อเปตอง: A104589</h3>
+                <p class="text-gray-600 mb-2">น้ำหนัก: 680 กรัม</p>
+                <p class="text-green-500 font-bold mb-4">สถานะ: ว่าง</p>
+                <form method="POST" action="{% url 'book_ball' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="ball_id" value="1"> <!-- ID ของลูกเปตอง -->
+                    <button 
+                        type="submit" 
+                        class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition w-full"
+                    >
+                        จองลูกเปตอง
+                    </button>
+                </form>
+            </div>
+
+            <!-- Another Ball Card -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <img 
+                    src="https://via.placeholder.com/300x200" 
+                    alt="Petanque Ball" 
+                    class="rounded-lg mb-4 w-full"
+                />
+                <h3 class="text-lg font-semibold mb-2">ชื่อเปตอง: B204678</h3>
+                <p class="text-gray-600 mb-2">น้ำหนัก: 710 กรัม</p>
+                <p class="text-red-500 font-bold mb-4">สถานะ: ไม่ว่าง</p>
+                <button 
+                    type="button" 
+                    class="bg-gray-400 text-white px-4 py-2 rounded-lg cursor-not-allowed w-full"
+                    disabled
+                >
+                    จองไม่ได้
+                </button>
+            </div>
+
+            <!-- Add More Cards as Needed -->
+        </div>
+    </div>
+</body>
+</html>
