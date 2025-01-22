@@ -2,3 +2,39 @@ createsuperuser
 
 username = f
 password = f
+
+สิ่งที่ยังไม่ได้ทำ 
+    USER
+- หน้าล็อคอิน #ติดบัค 
+- หน้าลงทะเบียน(ตกแต่ง)
+- หน้าข่าวสาร(ตกแต่ง) #ถ้าอยากออกแบบใหม่ก็ได้
+- หน้าจองสนาม(ทำการจองยังไม่เสร็จและตกแต่ง) *****
+- จองลูกเปตอง(อย่าลืมหน้าแอดมิน ยืนยันลูกเปตอง) ****
+- โปรไฟล์ #เหลือดึงข้อมูลผู้ใช้ที่ล็อคอินเข้ามาแสดง และตกแต่งเพิ่มก็ดี
+- ล็อคเอาท์ออกจากระบบ
+
+    Admin
+- เพิ่มหน้าล็อคอินให้แอดมินด้วย
+- หน้าแดชบอร์ด(เพิ่มยืนยันลูกเปตองได้/ทำแดชบอร์ด/ทำให้ยืนยันสนามได้) ****
+- หน้าข่าวสาร(เพิ่ม/ลบ/แก้ไข) #เหลือตกแต่งหน้าเพิ่มผู้ใช้และหน้าแก้ไข
+- หน้าสนามและลูกเปตอง(เพิ่ม/ลบ/แก้ไข/ค้นหาลูกเปตองได้) #เหลือตกแต่งหน้าเพิ่มผู้ใช้และหน้าแก้ไข
+- หน้าจัดการผู้ใช้(เพิ่ม/ลบ/แก้ไข/ค้นหาผู้ใช้ได้)  #เหลือตกแต่งหน้าเพิ่มผู้ใช้และหน้าแก้ไข
+- ล็อคเอาท์ออกจากระบบ
+
+
+****ฝากไว้****
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from .models import Equipment, User
+from .models import News
+from django.shortcuts import get_object_or_404
+from django.http import JsonResponse
+from .models import User
+from django.contrib import messages
+from .forms import PetanqueBallForm 
+from .models import Field
+from .forms import FieldForm

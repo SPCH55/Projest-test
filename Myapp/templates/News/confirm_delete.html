@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ลบข่าว</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+        <h1 class="text-xl font-bold text-red-600">ยืนยันการลบข่าว</h1>
+        <p class="text-gray-700 mt-4">คุณต้องการลบข่าว: <strong>{{ news.title }}</strong> ใช่หรือไม่?</p>
+        <form action="" method="post" class="mt-6">
+            {% csrf_token %}
+            <div class="flex justify-between">
+                <a href="{% url 'news' %}" class="text-gray-600 hover:text-gray-800">ยกเลิก</a>
+                <button type="submit" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg">ลบ</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

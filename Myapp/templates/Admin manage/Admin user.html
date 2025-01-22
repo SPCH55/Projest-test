@@ -37,7 +37,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{% url 'petanque' %}" class="flex items-center text-gray-700 hover:bg-purple-100 px-6 py-3 rounded-lg">
+                        <a href="{% url 'petanque_list' %}" class="flex items-center text-gray-700 hover:bg-purple-100 px-6 py-3 rounded-lg">
                             <span class="material-icons"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M224-288q45-35 70.5-85T320-480q0-57-25.5-107T224-672q-31 42-47.5 91T160-480q0 52 16.5 101t47.5 91Zm256 128q55 0 106.5-17.5T680-230q-57-46-88.5-111.5T560-480q0-73 31.5-138.5T680-730q-42-35-93.5-52.5T480-800q-55 0-106.5 17.5T280-730q57 46 88.5 111.5T400-480q0 73-31.5 138.5T280-230q42 35 93.5 52.5T480-160Zm256-128q31-42 47.5-91T800-480q0-52-16.5-101T736-672q-45 35-70.5 85T640-480q0 57 25.5 107t70.5 85ZM480-480Zm0 400q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/></svg></span>
                             <span class="ml-4">สนามและเปตอง</span>
                         </a>
@@ -84,9 +84,9 @@
                             <td class="px-4 py-2 border">{{ usere.email }}</td>
                             <td class="px-4 py-2 border">{{ usere.role }}</td>
                             <td class="px-4 py-2 text-center">
-                                <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">แก้ไข</button>
-                                <button class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">ลบ</button>
-                            </td>
+                                <a href="{% url 'edit_user' usere.id %}" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">แก้ไข</a>
+                                <a href="{% url 'delete_user' usere.id %}" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600" onclick="return confirm('คุณแน่ใจหรือไม่ว่าต้องการลบผู้ใช้นี้?');">ลบ</a>
+                            </td>                            
                         </tr>
                         
                         {% empty %}
@@ -99,8 +99,9 @@
             </div>
 
             <!-- Add User Button -->
+            <!-- Add User Button -->
             <div class="mt-6">
-                <button class="px-6 py-3 bg-green-500 text-white rounded-md hover:bg-green-600">เพิ่มผู้ใช้</button>
+                <a href="{% url 'add_user' %}" class="px-6 py-3 bg-green-500 text-white rounded-md hover:bg-green-600">เพิ่มผู้ใช้</a>
             </div>
         </div>
     </div>

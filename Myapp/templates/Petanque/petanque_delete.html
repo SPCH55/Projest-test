@@ -1,0 +1,7 @@
+<h2>ยืนยันการลบลูกเปตอง</h2>
+<p>คุณต้องการลบลูกเปตอง "{{ ball.name }}" หรือไม่?</p>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded">ยืนยัน</button>
+    <a href="{% url 'petanque_list' %}" class="bg-gray-500 text-white px-4 py-2 rounded">ยกเลิก</a>
+</form>

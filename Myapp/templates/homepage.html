@@ -11,6 +11,10 @@
     <div class="bg-blue-500 text-white py-20">
         <div class="container mx-auto text-center">
             <h1 class="text-4xl font-bold mb-4">ยินดีต้อนรับสู่ Petanque</h1>
+            <form method="post" action="{% url 'logout' %}" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" class="text-red-500 hover:text-red-700">Logout</button>
+            </form>
             <p class="text-lg mb-8">สถานที่สำหรับการจองสนามเปตองและการติดตามข่าวสารต่างๆ</p>
             <a href="{% url 'login' %}" class="bg-red-500 text-white py-2 px-6 rounded-full hover:bg-red-600">จองสนามตอนนี้</a>
         </div>

@@ -18,7 +18,7 @@ class User(models.Model):
 
 # Model for ข่าวสาร (News)
 class News(models.Model):
-    image = models.CharField(max_length=255, null=True, blank=True)
+    image = models.ImageField(upload_to='news_images/', null=True, blank=True)
     title = models.CharField(max_length=255)
     content = models.TextField()
     announcement_date = models.DateField()
@@ -35,7 +35,7 @@ class Equipment(models.Model):
     ]
     name = models.CharField(max_length=255)
     weight = models.CharField(max_length=255)
-    img = models.CharField(max_length=255, null=True, blank=True)
+    img = models.ImageField(upload_to='equipment/', null=True, blank=True)
     status = models.CharField(max_length=12, choices=STATUS_CHOICES, default='available')
 
     def __str__(self):
@@ -48,7 +48,7 @@ class Field(models.Model):
         ('unavailable', 'Unavailable'),
     ]
     name = models.CharField(max_length=255)
-    img = models.CharField(max_length=255, null=True, blank=True)
+    img = models.ImageField(upload_to='fields/', null=True, blank=True)  
     status = models.CharField(max_length=12, choices=STATUS_CHOICES, default='available')
 
     def __str__(self):
@@ -70,4 +70,6 @@ class Booking(models.Model):
 
     def __str__(self):
         return f"Booking {self.id} by {self.user.first_name}"
+    
+#********************test
 

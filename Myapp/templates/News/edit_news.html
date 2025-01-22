@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แก้ไขข่าว</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-2xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold text-gray-800 mb-6">แก้ไขข่าว</h1>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-4">
+                <label for="title" class="block text-gray-700 font-medium">หัวข้อข่าว</label>
+                <input type="text" id="title" name="title" value="{{ news.title }}" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+            <div class="mb-4">
+                <label for="content" class="block text-gray-700 font-medium">เนื้อหาข่าว</label>
+                <textarea id="content" name="content" rows="5" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">{{ news.content }}</textarea>
+            </div>
+            <div class="mb-4">
+                <label for="announcement_date" class="block text-gray-700 font-medium">วันที่ประกาศ</label>
+                <input type="date" id="announcement_date" name="announcement_date" value="{{ news.announcement_date }}" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+            <div class="mb-4">
+                <label for="link" class="block text-gray-700 font-medium">ลิงค์ข่าว</label>
+                <input type="url" id="link" name="link" value="{{ news.link }}" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+            <div class="mb-4">
+                <label for="image" class="block text-gray-700 font-medium">รูปภาพข่าว</label>
+                <input type="file" id="image" name="image" class="w-full px-4 py-2 border rounded-lg">
+                {% if news.image %}
+                <img src="{{ news.image.url }}" alt="{{ news.title }}" class="w-full h-32 object-cover mt-2 rounded-md">
+                {% endif %}
+            </div>
+            <div class="flex justify-between">
+                <a href="{% url 'news' %}" class="text-gray-600 hover:text-gray-800">ย้อนกลับ</a>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">บันทึก</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
